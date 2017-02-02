@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My beers App</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <style>
+      .hidden { display: none; }
+  </style>
+</head>
+
+<body>
+<div class="container">
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <h1 class="text-muted"><a class="navbar-brand" href="#">Beer Finder 😎</a></h1>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+          </ul>
+          <div id="search-beer-brands">
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control input-lg" placeholder="Input a beer brand name...">
+            <button type="submit" class="btn btn-primary">Search</button>
+          </form>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+ <div class="jumbotron">
+    <div class="row hidden" id="select-beer-brand">
+      <div class='col-lg-4' id="list-beer-brand">
+          
+      </div><!-- /.col-lg-4 -->      
+    </div><!-- /.row -->
+</div>
+
+    <div class="modal fade" id="beer-info" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Beer description and info...</h4>
+          </div>
+          <div class="modal-body">
+            <img src="" id="beer-icon">
+            <h2 id="beer-name"></h2>
+            <p id="beer-desc"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!--  <button type="submit" class="btn btn-primary">Search</button> -->
+
+<footer class="footer">
+    <p>&copy; 2016 Company, Inc.</p>
+</footer>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+
+<!-- Latest compiled and minified JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+<script src="search1.js"></script>
+</body>
+</html>
+
