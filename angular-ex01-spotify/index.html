@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="spotifyApp">
+<head>
+  <meta charset="UTF-8">
+  <title>My Spotify Angular Demo</title>
+  
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <!-- Angular minified-->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Spotify finder with Angular</h1>
+    <div class="jumbotron" ng-controller="searchController">
+      <div class="container">
+        <form action="" method="POST" role="form">    
+          <div class="form-group">
+            <h2>Select an artist</h2>
+            <input type="text" class="form-control" id="" placeholder="Input field">
+            <p>{{name}}</p>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <p>{{obj.last}}{{obj.first}}</p>
+    </div>
+
+
+
+
+  </div>
+
+  <!--jquery cdn-->
+  <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+  <!-- Latest compiled and minified JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+  <!-- Controllers .js-->
+  <script src='app.js'></script>
+</body>
+</html>
