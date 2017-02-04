@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Demo 02</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Angular minified-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <!-- <style>
+        .panel-heading {
+            display: flex;
+            flex-direction: row;
+        }
+    </style> -->
+    <style>
+        a:hover {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- <div class="jumbotron" ng-controller="operation">
+            <h2>Simple sum operation</h2>
+            <input type="text" ng-model="op1">
+            <input type="text" ng-model="op2">
+            <h3 ng-show="sum() || sum() == 0">The result of your sum is {{sum()}}</h3>
+        </div>
+        
+        <div class="jumbotron" ng-controller="operation">
+            <h2>Sum of Squares</h2>
+            <input type="number" ng-model="op1">
+            <input type="number" ng-model="op2">
+            <h3 ng-show="sumPow()">The sum of squares is {{sumPow()}}</h3>
+        </div>
+        
+        <div class="jumbotron" ng-controller="studentsController">
+            <h2>Students name without vowels</h2>
+            <p class="list-unstyled" ng-repeat="name in students">{{name}} contains {{name.length}} letters</p>
+        </div>
+
+        <div class="jumbotron" ng-controller="studentsController">
+            <ul>
+                <li ng-repeat="name in students">{{name}}</li>
+            </ul>
+        </div> -->
+        <div class="jumbotron" ng-controller="StudentsController">
+                       
+            <div class="row">
+                <h2>Skylabstudents</h2>
+                
+                <input type="text" class="form-control" id="" placeholder="Input field" ng-model="name">
+                <button type="button" class="btn btn-primary" ng-click="addStudent($event)">Add student</button>
+                
+            </div>
+
+            <div class="jumbotron">
+                <ul>
+                <li ng-repeat="student in students"> {{$index}} --> {{student}} <a ng-click="removeStudent($index)">[Delete]</a>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 
+        <div class="jumbotron" ng-controller="studentsSearchController">
+            <h2>Filter by Student Name</h2>
+            <input ng-model="query" type="text" placeholder="Enter a student name">
+            <h2>Order by</h2>
+            <div>
+                <select ng-model="orderStudents">
+                    <option value="name">Name</option>
+                    <option value="mail">Mail</option>
+                    <option value="github">Github</option>
+                </select>
+            </div>
+            <h2>Output List</h2>
+            <div ng-repeat="student in studList | filter: {name:query} | orderBy:orderStudents">
+                <ul class="list-group list-unstyled">
+                    <li class="list-group-item"><strong>{{student.name}}</strong>'s mail and Github are: <strong>{{student.mail}}</strong> and <strong>{{student.github}}</strong></li>
+                </ul>
+            </div>
+        <!-- <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default" ng-repeat="student in studList | filter: {
+            name:query} | orderBy:orderStudents">
+                <div class="panel-heading" role="tab" id="heading{{student.id}}">
+                    <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{student.id}}" aria-expanded="true" aria-controls="collapse{{student.id}}">
+                      {{student.name}}
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapse{{student.id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{student.id}}">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p> <a href="{{student.mail}}">{{student.mail}}</a></p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><a href="{{student.github}}">{{student.github}}</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    <!--jquery cdn-->
+    <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <!-- Latest compiled and minified JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+    <script src="controllers.js"></script>
+</body>
+
+</html>
