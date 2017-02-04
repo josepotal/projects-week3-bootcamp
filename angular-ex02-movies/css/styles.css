@@ -1,0 +1,14 @@
+#listedMovies {
+  border: 1px solid grey;
+  padding: 5px;
+  display: flex;    /*it is necessary to have access to the other properties*/
+  flex-direction: row;  /*problems here*/
+  flex-wrap: wrap;
+}
+
+h4 {
+  color: #3D23B2;
+}
+/*justify-content: space-around; //space-between
+  align-items: center; //baseline, start, end
+  align-content: flex-start;*/

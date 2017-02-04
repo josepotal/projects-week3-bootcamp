@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MoviesApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Movies with Angular</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Loading the angular framework using its cdn -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <!-- Loading the angular routes using its cdn -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#/popular">Movie Collection</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#/popular">Popular Movies</a></li>
+                    <li><a href="#/upcoming">Upcoming Movies</a></li>
+                    <li><a href="#/nowplaying">Now Playing Movies</a></li>
+                    <li><a href="#/toprated">Top Rated Movies</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-cog"></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End of navigation bar -->
+    
+    <!-- Main part of the htmml-->
+    <main ng-view> </main>
+    
+    <!-- End of the Main part of the htmml-->
+
+    <!-- footer -->
+    <footer class="footer">
+    <div class="container">
+      <p>&copy; 2017 Company, Inc.</p>
+    </div>
+    </footer>
+    <!-- end of Footer-->
+
+    
+
+
+    <!-- Libraries
+    ==================================== -->
+    <!-- Loading the jquery library -->
+    <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <!-- Latest compiled and minified JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <!-- Scripts 
+    ================================== -->
+    <script src="js/app.js"></script>
+    <script src="js/factory.js"></script>
+    <script src="js/popular/controller.js"></script>
+    <script src="js/upcoming/controller.js"></script>
+    <script src="js/nowplaying/controller.js"></script>
+    <script src="js/toprated/controller.js"></script>
+    <script src="js/config.js"></script>
+
+</body>
+
+</html>
