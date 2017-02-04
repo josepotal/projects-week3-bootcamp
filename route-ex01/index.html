@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myRouteApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Routing Angular Demo</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header clearfix">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="#/">Home</a></li>
+                    <li role="presentation"><a href="#/about">About</a></li>
+                    <li role="presentation"><a href="#/contact">Contact</a></li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">Project name</h3>
+        </div>
+        
+        <main ng-view></main>
+        
+        <footer class="footer">
+            <p>&copy; 2016 Company, Inc.</p>
+        </footer>
+    </div>
+    <!-- /container -->
+
+    <script>
+      angular.module('myRouteApp',['ngRoute'])
+
+      .config(function($routeProvider) {
+        
+        $routeProvider
+        .when('/', {
+          templateUrl: 'home/home.html',
+          controller: 'HomeController'
+        })
+        .when('/about', {
+          templateUrl: 'about/about.html',
+          controller: 'AboutController'
+        })
+        .when('/contact', {
+          templateUrl: 'contact/contact.html',
+          controller: 'ContactController'
+
+        })
+      })
+
+    </script>
+    <script src="home/controller.js"></script>
+    <script src="about/controller.js"></script>
+    <script src="contact/controller.js"></script>
+
+</body>
+
+</html>
