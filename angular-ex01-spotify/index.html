@@ -1,43 +1,72 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="spotifyApp">
+<html lang="en" ng-app="SpotifyApp">
+
 <head>
-  <meta charset="UTF-8">
-  <title>My Spotify Angular Demo</title>
-  
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <!-- Angular minified-->
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <meta charset="UTF-8">
+    <title>My Spotify Angular Demo</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Angular minified-->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
 </head>
+
 <body>
+    <div class="container">
+        <h1>Spotify finder with Angular</h1>
+       
+        <section id="search-artists" ng-controller="SearchArtistController">
+                <h3>Spotify Search Tracks</h3>
+                <form action="" method="POST" class="form-inline" role="form" ng-submit="searchArtist($event)">
+                    <div class="form-group">
+                        <label for="">Search an artist</label>
+                        <input type="text" class="form-control" autofocus placeholder="Input artist name..." ng-model="search">
+                    </div>
+                    <button type="submit" class="form-control btn btn-primary">Search</button>
+                </form>
+            </section>
 
-  <div class="container">
-    <h1>Spotify finder with Angular</h1>
-    <div class="jumbotron" ng-controller="searchController">
-      <div class="container">
-        <form action="" method="POST" role="form">    
-          <div class="form-group">
-            <h2>Select an artist</h2>
-            <input type="text" class="form-control" id="" placeholder="Input field">
-            <p>{{name}}</p>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
-      <p>{{obj.last}}{{obj.first}}</p>
+        <div class="jumbotron" ng-controller="ArtistsController" ng-show="artists.length">
+            <div class="container">
+            <h2>Select an album</h2>
+                <form action="" method="POST" role="form" ng-submit="searchAlbum($event)">
+                    <div class="form-group">
+                        
+                        <select ng-model="search" ng-change="searchAlbum()">
+                        <option  value="{{artist.id}}" ng-repeat="artist in artists" >{{artist.name}}</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="jumbotron"  ng-show="albums.length">
+            <div class="container">
+            <h2>Select an album</h2>
+                <form action="" method="POST" role="form" ng-submit="">
+                    <div class="form-group">
+                        
+                        <select>
+                        <option value="{{album.id}}" ng-repeat="album in albums" >{{album.name}}</option>
+                        </select>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+
     </div>
-
-
-
-
-  </div>
-
-  <!--jquery cdn-->
-  <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
-  <!-- Latest compiled and minified JS -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-  <!-- Controllers .js-->
-  <script src='app.js'></script>
+    <!--jquery cdn-->
+    <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <!-- Latest compiled and minified JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- Controllers .js-->
+    <script src="app.js"></script>
+    <script src="controllers.js"></script>
+    <script src="services.js"></script>
 </body>
+
 </html>
