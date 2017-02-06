@@ -12,10 +12,20 @@ angular.module('SpotifyApp')
         var url = 'https://api.spotify.com/v1/artists/<%ID-ARTIST%>/albums'
         url = url.replace('<%ID-ARTIST%>', searchQuery)
         return $http.get(url)
-        console.log(searchAlbum)
+        
     }
+
+    function searchTrack(searchQuery) {
+        var url = 'https://api.spotify.com/v1/albums/<%ID-ALBUM%>/tracks'
+        url = url.replace('<%ID-ALBUM%>', searchQuery)
+        return $http.get(url)
+
+    }
+
+    
     return {
         searchArtist: searchArtist,
-        searchAlbum: searchAlbum
+        searchAlbum: searchAlbum,
+        searchTrack: searchTrack
     }
 })

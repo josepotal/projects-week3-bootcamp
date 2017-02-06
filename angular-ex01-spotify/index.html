@@ -16,49 +16,53 @@
         <h1>Spotify finder with Angular</h1>
        
         <section id="search-artists" ng-controller="SearchArtistController">
-                <h3>Spotify Search Tracks</h3>
-                <form action="" method="POST" class="form-inline" role="form" ng-submit="searchArtist($event)">
-                    <div class="form-group">
-                        <label for="">Search an artist</label>
-                        <input type="text" class="form-control" autofocus placeholder="Input artist name..." ng-model="search">
-                    </div>
-                    <button type="submit" class="form-control btn btn-primary">Search</button>
-                </form>
-            </section>
+            <h3>Spotify Search Tracks</h3>
+            
+            <form  action="" method="POST" class="form-inline" role="form" ng-submit="searchArtist($event)">
+                <div class="form-group">
+                    <label for="">Search an artist: </label>
+                    <input type="text" class="form-control" autofocus placeholder="Input artist name..." ng-model="search">
+                </div>
+                <button type="submit" class="form-control btn btn-primary">Search</button>
+            </form> 
+        </section>
 
-        <div class="jumbotron" ng-controller="ArtistsController" ng-show="artists.length">
-            <div class="container">
-            <h2>Select an album</h2>
-                <form action="" method="POST" role="form" ng-submit="searchAlbum($event)">
-                    <div class="form-group">
-                        
-                        <select ng-model="search" ng-change="searchAlbum()">
+        <section ng-controller="SelectArtistController">  
+            <form  action="" method="POST" role="form" ng-submit="searchAlbum($event)">
+                <div class="form-group">
+                    <label for="">Select an Artist: </label>
+                    <select class="form-control" ng-change="searchAlbum()" ng-model="search">
+                        <option value="">--- Select an artist ---</option>
                         <option  value="{{artist.id}}" ng-repeat="artist in artists" >{{artist.name}}</option>
-                        </select>
-                    </div>
-                </form>
-            </div>
-        </div>
+                    </select>
+                </div>
+            </form>
+        </section>
 
-        <div class="jumbotron"  ng-show="albums.length">
-            <div class="container">
-            <h2>Select an album</h2>
-                <form action="" method="POST" role="form" ng-submit="">
-                    <div class="form-group">
-                        
-                        <select>
+        <section ng-controller="SelectAlbumController">
+            <form action="" method="POST" role="form" ng-submit="searchTrack($event)">
+                <div class="form-group">
+                    <label for="">Select an Album</label>
+                    <select class="form-control" ng-change="searchTrack()" ng-model="search">
+                        <option value="">--- Select an album ---</option>
                         <option value="{{album.id}}" ng-repeat="album in albums" >{{album.name}}</option>
-                        </select>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-
-
+                    </select>
+                </div>
+            </form>
+        </section>
 
     </div>
+
+    <div class="container">
+        <ul class="list-unstyled">
+            <li ng-repeat="track in tracks">
+            <audio href="{{track.preview_url}}" type="audio/mpeg" controls></audio>
+            <p>{{track.name}}</p>
+            </li>
+        </ul>
+    </div>
+
+
     <!--jquery cdn-->
     <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
     <!-- Latest compiled and minified JS -->
